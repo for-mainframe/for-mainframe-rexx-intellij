@@ -1,0 +1,45 @@
+<!--
+  Copyright (c) 2024 IBA Group.
+
+  This program and the accompanying materials are made available under the terms of the
+  Eclipse Public License v2.0 which accompanies this distribution, and is available at
+  https://www.eclipse.org/legal/epl-v20.html
+
+  SPDX-License-Identifier: EPL-2.0
+
+  Contributors:
+    candiduslynx (Alex Shcherbakov) - initial implementation
+    IBA Group
+-->
+
+<idea-plugin version="2">
+  <id>eu.ibagroup.rexx</id>
+  <name>Rexx Language Support</name>
+  <version>0.1.0</version>
+  <vendor email="ukalesnikau@ibagroup.eu" url="https://https://github.com/for-mainframe/for-mainframe-rexx-intellij">IBA Group</vendor>
+
+  <description><![CDATA[
+      Plugin to support syntax checking and highlight for Rexx language.
+    ]]></description>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="eu.ibagroup.rexx.RexxFileTypeFactory"/>
+    <fileType
+      name="Rexx file"
+      description="REXX language file"
+      defaultExtension="rexx"
+      language="Rexx"
+      implementationClass="eu.ibagroup.rexx.RexxFileType"/>
+
+    <lang.syntaxHighlighterFactory language="Rexx" implementationClass="eu.ibagroup.rexx.RexxSyntaxHighlighterFactory"/>
+    <colorSettingsPage implementation="eu.ibagroup.rexx.RexxColorSettingsPage"/>
+
+    <lang.parserDefinition language="Rexx" implementationClass="eu.ibagroup.rexx.RexxParserDefinition"/>
+    <lang.psiStructureViewFactory language="Rexx" implementationClass="eu.ibagroup.rexx.structview.RexxStructureViewFactory"/>
+  </extensions>
+
+</idea-plugin>

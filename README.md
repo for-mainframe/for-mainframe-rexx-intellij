@@ -1,4 +1,3 @@
-# IntelliJ-Rexx
-Rexx language plugin for IntelliJ IDEA
+# Rexx Language Support plug-in for IntelliJ IDEA™
 
-## Not maintained currently.
+Rexx Language Support plug-in for IntelliJ IDEA. Adds support for Rexx language. Plugin to support syntax checking and highlight for Rexx language.
